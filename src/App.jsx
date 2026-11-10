@@ -148,6 +148,16 @@ export default function App() {
               <span className="hidden md:inline">{isRefreshing ? '爬蟲同步中...' : '即時同步'}</span>
             </button>
             <div className="h-6 w-px bg-slate-800"></div>
+            <a
+              href="https://careers.tsmc.com/zh_TW/careers/JobDetail?jobId=562&source=External%2BCareer%2BSite"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:flex items-center gap-1.5 text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white px-3 py-1.5 rounded-lg border border-slate-700 transition"
+              title="前往台積電官方人才庫線上登錄"
+            >
+              <span>TSMC 人才庫</span>
+              <ExternalLink className="w-3 h-3 text-red-400" />
+            </a>
             <button
               onClick={() => setActiveTab(activeTab === 'list' ? 'guide' : 'list')}
               className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium transition ${
@@ -500,10 +510,21 @@ export default function App() {
                               href={job.officialUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center gap-1 text-xs bg-red-600 hover:bg-red-500 text-white px-3.5 py-2 rounded-xl font-medium transition shadow-md shadow-red-950"
+                              className="flex items-center gap-1.5 text-xs bg-red-600 hover:bg-red-500 text-white px-3.5 py-2 rounded-xl font-semibold transition shadow-md shadow-red-950"
+                              title="直達台積電官網此職缺之詳細需求與應徵頁面"
                             >
                               <span>官網投遞</span>
                               <ExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                            <a
+                              href={job.talentPoolUrl || "https://careers.tsmc.com/zh_TW/careers/JobDetail?jobId=562&source=External%2BCareer%2BSite"}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hidden sm:flex items-center gap-1 text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-3 py-2 rounded-xl font-medium transition"
+                              title="前往台積電官方人才庫登錄常態投遞"
+                            >
+                              <span>人才庫登錄</span>
+                              <ExternalLink className="w-3.5 h-3.5 text-red-400" />
                             </a>
                           </div>
                         </div>
